@@ -1,5 +1,6 @@
 package mthree.com.fullstackschool.service;
 
+import mthree.com.fullstackschool.dao.CourseDao;
 import mthree.com.fullstackschool.dao.StudentDao;
 import mthree.com.fullstackschool.model.Course;
 import mthree.com.fullstackschool.model.Student;
@@ -13,7 +14,10 @@ public class StudentServiceImpl implements StudentServiceInterface {
 
     //YOUR CODE STARTS HERE
 
-
+    StudentDao dao;
+    public StudentServiceImpl(StudentDao studentDao){
+        dao = studentDao;
+    }
     //YOUR CODE ENDS HERE
 
     public List<Student> getAllStudents() {

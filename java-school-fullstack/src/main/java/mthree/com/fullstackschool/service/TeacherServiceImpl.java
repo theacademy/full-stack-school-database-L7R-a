@@ -1,5 +1,6 @@
 package mthree.com.fullstackschool.service;
 
+import mthree.com.fullstackschool.dao.StudentDao;
 import mthree.com.fullstackschool.dao.TeacherDao;
 import mthree.com.fullstackschool.model.Teacher;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,10 @@ import java.util.List;
 public class TeacherServiceImpl implements TeacherServiceInterface {
 
     //YOUR CODE STARTS HERE
-
+    TeacherDao dao;
+    public TeacherServiceImpl(TeacherDao teacherDao){
+        dao = teacherDao;
+    }
 
     //YOUR CODE ENDS HERE
 

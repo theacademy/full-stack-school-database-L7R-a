@@ -11,7 +11,10 @@ import java.util.List;
 public class CourseServiceImpl implements CourseServiceInterface {
 
     //YOUR CODE STARTS HERE
-
+    CourseDao dao;
+    public CourseServiceImpl(CourseDao courseDao){
+        dao = courseDao;
+    }
 
 
     //YOUR CODE ENDS HERE
