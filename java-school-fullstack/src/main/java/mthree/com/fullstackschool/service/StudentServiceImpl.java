@@ -86,7 +86,7 @@ public class StudentServiceImpl implements StudentServiceInterface {
             System.out.println("Student not found");
         }
         else if(course.getCourseName().equalsIgnoreCase("Course Not Found")){
-            System.out.println("Course not found");
+            System.out.println("Course not found") ;
         }
         else{
             dao.deleteStudentFromCourse(studentId, courseId);
