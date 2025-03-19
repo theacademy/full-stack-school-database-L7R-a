@@ -37,7 +37,7 @@ public class TeacherServiceTests {
     public void updateTeacherServiceTest() {
         Teacher teacher = new Teacher();
         teacher.setTeacherId(200);
-        teacher.setTeacherFName("Updated Teacher First Name");
+        teacher.setTeacherFName("Updated Teacher First Name") ;
         teacher.setTeacherLName("Updated Teacher Last Name");
 
         Teacher upTeacher = teacherService.updateTeacherData(200, teacher);
