@@ -21,41 +21,53 @@ public class CourseServiceImpl implements CourseServiceInterface {
 
     public List<Course> getAllCourses() {
         //YOUR CODE STARTS HERE
-
-        return null;
+        return dao.getAllCourses();
 
         //YOUR CODE ENDS HERE
     }
 
     public Course getCourseById(int id) {
         //YOUR CODE STARTS HERE
-
-        return null;
-
+        Course res = new Course();
+        try{
+            res = dao.findCourseById(id);
+        }
+        catch (DataAccessException e){
+            res.setCourseName("Course Not Found");
+            res.setCourseDesc("Course Not Found");
+        }
+        return res;
         //YOUR CODE ENDS HERE
     }
 
     public Course addNewCourse(Course course) {
         //YOUR CODE STARTS HERE
-
-        return null;
+        if(course.getCourseDesc().isBlank()){
+            course.setCourseDesc("Description blank, course NOT added");
+        }
+        if(course.getCourseName().isBlank()){
+            course.setCourseName("Name blank, course NOT added");
+        }
+        return dao.createNewCourse(course);
 
         //YOUR CODE ENDS HERE
     }
 
     public Course updateCourseData(int id, Course course) {
         //YOUR CODE STARTS HERE
-
-        return null;
-
+        if(id != course.getCourseId()){
+            course.setCourseDesc("IDs do not match, course not updated");
+            course.setCourseName("IDs do not match, course not updated");
+        }
+        dao.updateCourse(course);
+        return course;
         //YOUR CODE ENDS HERE
     }
 
     public void deleteCourseById(int id) {
         //YOUR CODE STARTS HERE
-
-
-
+        dao.deleteCourse(id);
+        System.out.println("Course ID: " + id + " deleted");
         //YOUR CODE ENDS HERE
     }
 }
