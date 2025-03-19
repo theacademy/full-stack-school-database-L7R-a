@@ -69,7 +69,7 @@ public class StudentServiceImpl implements StudentServiceInterface {
     public void deleteStudentById(int id) {
         //YOUR CODE STARTS HERE
 
-        deleteStudentById(id);
+        dao.deleteStudent(id);
 
         //YOUR CODE ENDS HERE
     }
@@ -78,8 +78,10 @@ public class StudentServiceImpl implements StudentServiceInterface {
         //YOUR CODE STARTS HERE
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
         CourseDaoImpl courseDao = new CourseDaoImpl(jdbcTemplate);
-        Student student = getStudentById(studentId);
         Course course = courseDao.findCourseById(courseId);
+
+        Student student = getStudentById(studentId);
+
         if(student.getStudentFirstName().equalsIgnoreCase("Student Not Found")){
             System.out.println("Student not found");
         }
@@ -87,7 +89,7 @@ public class StudentServiceImpl implements StudentServiceInterface {
             System.out.println("Course not found");
         }
         else{
-            deleteStudentFromCourse(studentId, courseId);
+            dao.deleteStudentFromCourse(studentId, courseId);
             System.out.println("Student: " + studentId + " deleted from course:" + courseId);
         }
 
@@ -110,7 +112,7 @@ public class StudentServiceImpl implements StudentServiceInterface {
                 System.out.println("Course not found");
             }
             else{
-                addStudentToCourse(studentId, courseId);
+                dao.addStudentToCourse(studentId, courseId);
                 System.out.println("Student: " + studentId + " added to course:" + courseId);
             }
         }

@@ -70,7 +70,7 @@ public class TeacherServiceImpl implements TeacherServiceInterface {
     public void deleteTeacherById(int id) {
         //YOUR CODE STARTS HERE
 
-        deleteTeacherById(id);
+        dao.deleteTeacher(id);
 
         //YOUR CODE ENDS HERE
     }
