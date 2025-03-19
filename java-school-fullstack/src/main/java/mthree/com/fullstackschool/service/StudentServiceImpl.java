@@ -29,15 +29,15 @@ public class StudentServiceImpl implements StudentServiceInterface {
 
     public Student getStudentById(int id) {
         //YOUR CODE STARTS HERE
-        Student res = new Student();
+        Student student = new Student();
         try{
-            res = dao.findStudentById(id);
+            student = dao.findStudentById(id);
         }
         catch (DataAccessException e){
-            res.setStudentFirstName("Student Not Found");
-            res.setStudentFirstName("Student Not Found");
+            student.setStudentFirstName("Student Not Found");
+            student.setStudentFirstName("Student Not Found");
         }
-        return res;
+        return student;
         //YOUR CODE ENDS HERE
     }
 

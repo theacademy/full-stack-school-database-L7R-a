@@ -27,15 +27,15 @@ public class TeacherServiceImpl implements TeacherServiceInterface {
 
     public Teacher getTeacherById(int id) {
         //YOUR CODE STARTS HERE
-        Teacher res = new Teacher();
+        Teacher teacher = new Teacher();
         try{
-            res = dao.findTeacherById(id);
+            teacher = dao.findTeacherById(id);
         }
         catch (DataAccessException e){
-            res.setTeacherLName("Teacher Not Found");
-            res.setTeacherFName("Teacher Not Found");
+            teacher.setTeacherLName("Teacher Not Found");
+            teacher.setTeacherFName("Teacher Not Found");
         }
-        return res;
+        return teacher;
         //YOUR CODE ENDS HERE
     }
 

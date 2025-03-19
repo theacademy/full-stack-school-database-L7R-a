@@ -28,15 +28,15 @@ public class CourseServiceImpl implements CourseServiceInterface {
 
     public Course getCourseById(int id) {
         //YOUR CODE STARTS HERE
-        Course res = new Course();
+        Course course = new Course();
         try{
-            res = dao.findCourseById(id);
+            course = dao.findCourseById(id);
         }
         catch (DataAccessException e){
-            res.setCourseName("Course Not Found");
-            res.setCourseDesc("Course Not Found");
+            course.setCourseName("Course Not Found");
+            course.setCourseDesc("Course Not Found");
         }
-        return res;
+        return course;
         //YOUR CODE ENDS HERE
     }
 
